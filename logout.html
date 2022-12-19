@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0e1538" />
+	<link rel="icon" type="image/x-icon" href="./public/icon/logo.ico">
+    <title>logout</title>
+    <link rel="stylesheet" href="assets/app.css">
+    <script language="JavaScript">
+        function openLogin() {
+            if (window.name != 'hotspot_logout') return true;
+            open('$(link-login)', '_blank', '');
+            window.close();
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div id="loginPage" class="px-1 py-1 flex flex-col justify-center items-center h-full w-full overscroll-y-auto">
+
+        <div class="xborder border-slate-500 rounded-xl px-2 py-2 space-y-3 flex flex-col justify-center items-center w-full">
+            
+            <div class="flex rounded-md flex-col w-full space-y-3 overscroll-y-auto">
+
+				<table class="w-full">
+					<tr>
+						<td colspan="2">
+							<div id="sec_header" class="flex">
+								<div class="flex flex-col space-y-3 w-full">
+									<div id="header" class="flex flex-col w-full"></div>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr id="fitur-waktu">
+						<td style="width: 100%;">
+							<div style="padding-top: 10px;">
+								<p id="masehi" class="text-xs lg:text-2xl antialiased"></p>
+								<p id="hijriah" class="fitur-hijriah text-xs lg:text-2xl antialiased"></p>
+								<p id="countdownRamadhan" class="text-xs lg:text-2xl antialiased"></p>
+							</div>
+						</td>
+						<td style="width: 100%;">
+							<p id="time" class="text-2xl lg:text-7xl antialiased font-medium"></p>
+						</td>
+					</tr>
+				</table>
+
+                <div id="fitur-praytimes" class="text-[0.55rem] sm:text-xs">
+					<table width="" class="pTimes" style="width: 100%; color: #f8fafc;">
+						<tr class="flex overflow-x-auto xspace-x-3">
+							<td style="width: 100%;">
+								<div id="fsubuh" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600">
+									<p id="subuh" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Subuh</p>
+								</div>
+							</td>
+							<td style="width: 100%;">
+								<div id="fdzuhur" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600">
+									<p id="dzuhur" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Dzuhur</p>
+								</div>
+							</td>
+							<td style="width: 100%;">
+								<div id="fashar" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600">
+									<p id="ashar" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Ashar</p>
+								</div>
+							</td>
+							<td style="width: 100%;">
+								<div id="fmaghrib" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600">
+									<p id="maghrib" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Maghrib</p>
+								</div>
+							</td>
+							<td style="width: 100%;">
+								<div id="fisya" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-teal-400 via-teal-500 to-teal-600">
+									<p id="isya" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Isya</p>
+								</div>
+							</td>
+							
+						</tr>
+					</table>
+                </div>
+
+                <div id="fitur-menu" class="flex flex-col space-y-1"></div>
+
+                <div id="content" class="row-span-3 lg:text-2xl lg:font-light rounded-md flex flex-col space-y-3">
+
+                    <div class="flex flex-col space-y-1">
+                        
+                        <div class="bg_opacity flex px-3 py-3 items-center grid-cols-1 p-1 space-x-1 border-l rounded-md shadow-md border-red-500">
+                            <p class="antialiased">
+                                Anda berhasil logout
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg_opacity flex flex-col lg:text-xl space-y-1">
+                        <div class="flex flex-col px-3 py-3 border-l rounded-md shadow-md border-red-500">
+                            <table class="antialiased">
+                                
+                                $(if login-by == 'trial')
+                                <tr>
+                                    <td class="w-28 lg:w-36">Username</td>
+                                    <td>: Trial</td>
+                                </tr>
+                                $(endif)
+
+                                $(if login-by != 'mac')
+                                <tr>
+                                    <td class="w-28 lg:w-36">Username</td>
+                                    <td>: $(username)</td>
+                                </tr>
+                                $(endif)
+                                
+                                <tr>
+                                    <td>IP Address</td>
+                                    <td>: $(ip)</td>
+                                </tr>
+                                <tr>
+                                    <td>MAC Address</td>
+                                    <td>: $(mac)</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Tersambung</td>
+                                    <td>: $(uptime)</td>
+                                </tr>
+                                <tr>
+                                    <td>Upload</td>
+                                    <td>: $(bytes-in-nice)</td>
+                                </tr>
+                                <tr>
+                                    <td>Download</td>
+                                    <td>: $(bytes-out-nice)</td>
+                                </tr>
+
+                                $(if remain-bytes-total)
+                                <tr>
+                                    <td>Sisa Kuota</td>
+                                    <td>: $(remain-bytes-total-nice)</td>
+                                </tr>
+                                $(endif)
+
+                                $(if session-time-left)
+                                <tr>
+                                    <td>Sisa Waktu</td>
+                                    <td>: $(session-time-left)</td>
+                                </tr>
+                                $(endif)
+
+                                <!-- $(if refresh-timeout)
+                                <tr>
+                                    <td>Refresh</td>
+                                    <td>: $(refresh-timeout)</td>
+                                </tr>
+                                $(endif)
+
+                                <tr id="exp_status">
+                                    <td valign="top">Expired</td>
+                                    <td valign="top" class="flex space-x-0 w-full" id="exp_load"></td>
+                                </tr> -->
+
+                            </table>
+                        </div>
+                    </div>
+                    <p id="user" class="hidden">$(username)</p>
+
+                    <div class="flex flex-col space-y-1">
+                        <div class="flex flex-col justify-center items-center">
+                            <a href="./login.html" class="w-full flex justify-center items-center">
+                                <div class="w-full lg:w-1/2 text-center px-3 py-3 rounded-md shadow-md bg-gradient-to-r from-pink-400 to-rose-400">
+                                    <p id="btnLogin" class="antialiased font-normal">Login</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+	<script src="./config/index.js?v=10"></script>
+	<script id="firstScript" src="./assets/init.js"></script>
+
+</body>
+</html>

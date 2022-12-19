@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0e1538" />
+	<link rel="icon" type="image/x-icon" href="./public/icon/logo.ico">
+    <title>home</title>
+</head>
+<body>
+    <div id="loginPage" class="px-1 py-1 flex flex-col justify-center items-center h-full w-full overscroll-y-auto">
+
+        <div class="xborder border-slate-500 rounded-xl px-2 py-2 space-y-3 flex flex-col justify-center items-center w-full">
+            
+            <div class="flex rounded-md flex-col w-full space-y-3 overscroll-y-auto">
+
+				<table class="w-full">
+					<tr>
+						<td colspan="2">
+							<div id="sec_header" class="flex">
+								<div class="flex flex-col space-y-3 w-full">
+									<div id="header" class="flex flex-col w-full"></div>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr id="fitur-waktu">
+						<td style="width: 100%;">
+							<div style="padding-top: 10px;">
+								<p id="masehi" class="text-xs lg:text-2xl antialiased"></p>
+								<p id="hijriah" class="fitur-hijriah text-xs lg:text-2xl antialiased"></p>
+								<p id="countdownRamadhan" class="text-xs lg:text-2xl antialiased"></p>
+							</div>
+						</td>
+						<td style="width: 100%;">
+							<p id="time" class="text-2xl lg:text-7xl antialiased font-medium"></p>
+						</td>
+					</tr>
+				</table>
+
+                <div id="fitur-praytimes" class="text-[0.55rem] sm:text-xs">
+					<table width="" class="pTimes" style="width: 100%; color: #f8fafc;">
+						<tr class="flex overflow-x-auto xspace-x-3">
+							<td style="width: 100%;">
+								<div id="fsubuh" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600">
+									<p id="subuh" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Subuh</p>
+								</div>
+							</td>
+							<td style="width: 100%;">
+								<div id="fdzuhur" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600">
+									<p id="dzuhur" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Dzuhur</p>
+								</div>
+							</td>
+							<td style="width: 100%;">
+								<div id="fashar" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600">
+									<p id="ashar" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Ashar</p>
+								</div>
+							</td>
+							<td style="width: 100%;">
+								<div id="fmaghrib" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600">
+									<p id="maghrib" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Maghrib</p>
+								</div>
+							</td>
+							<td style="width: 100%;">
+								<div id="fisya" class="flex flex-col px-1 md:px-3 py-1 lg:py-6 rounded-md justify-center items-center bg-gradient-to-br from-teal-400 via-teal-500 to-teal-600">
+									<p id="isya" class="text-base lg:text-5xl"></p>
+									<p class="font-medium text-xs lg:text-xl">Isya</p>
+								</div>
+							</td>
+							
+						</tr>
+					</table>
+                </div>
+
+                <div id="fitur-menu" class="flex space-y-1"></div>
+
+                <div id="content" class="content row-span-3 rounded-md flex flex-col space-y-3">
+                    
+                    <div class="shadow-lg" id="glideTrack"></div>
+
+                    <div class="-mt-2">
+						$(if chap-id)
+						<form name="sendin" action="$(link-login-only)" method="post">
+							<input type="hidden" name="username" />
+							<input type="hidden" name="password" />
+							<input type="hidden" name="dst" value="$(link-orig)" />
+							<input type="hidden" name="popup" value="true" />
+						</form>
+						$(endif)
+						<a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)"></a>
+					</div>
+					
+					<form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+
+						<input type="hidden" name="dst" value="$(link-orig)" />
+                        <input type="hidden" name="popup" value="true" />
+						
+                        <div class="bg_opacity px-3 py-3 lg:text-2xl lg:font-light flex flex-col space-y-2 rounded-md w-full">
+                            <div id="fusername" class="flex flex-col space-y-1">
+                                <label for="username" id="lusername" class="capitalize">username</label>
+                                <input type="text" name="username" id="username" value="$(username)" placeholder="username" autocomplete="on" class="bg_form_input px-3 py-3 lg:py-4 rounded-md outline-none">
+                            </div>
+
+                            <div id="fpassword" class="flex flex-col space-y-1">
+                                <label for="password" id="lpassword" class="capitalize">password</label>
+                                <input type="text" name="password" id="password" placeholder="password" autocomplete="off" class="bg_form_input px-3 py-3 lg:py-4 rounded-md outline-none">
+                            </div>
+
+							$(if error)
+							<div class="flex flex-col">
+								<p class="text-sm lg:text-xl text-red-400">$(error)</p>
+							</div>
+							$(endif)
+
+							<input type="hidden" id="voucherActive" value="0">
+							<div class="flex justify-around items-center py-3 lg:font-light">
+                                <button type="button" class="" id="loginType" data-login="0">Login as <span class="">voucher</span></button>
+                                <button id="btnLogin" type="submit" class="px-3 py-2 lg:py-4 w-1/3 rounded-md bg-gradient-to-r from-pink-400 to-rose-400 shadow-md">Masuk</button>
+                            </div>
+
+                            <div class="flex space-x-2 justify-start items-center">
+
+								$(if trial == 'yes')
+								<div id="fitur-trial">
+									<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" class="flex justify-center items-center space-x-1">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 lg:h-8 lg:w-8" fill="none" viewBox="0 0 24 24" stroke="#f6f7f8">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+										</svg>
+										<p id="free_trial" style="color: #facc15;" class=" lg:font-light"></p>
+									</a>
+								</div>
+								
+								<div id="fitur-batas">
+									| 
+								</div>
+								$(endif)
+
+								<div id="fitur-login-qrcode">
+									<a href="https://eriiksanjaya.github.io/qr" class="flex justify-center items-center space-x-1">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 lg:h-8 lg:w-8" fill="none" viewBox="0 0 24 24" stroke="#f6f7f8">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
+										</svg>
+										<p id="login_qrcode" style="color: #facc15;" class=" lg:font-light">Scan Qrcode</p>
+									</a>
+								</div>
+							</div>
+                        </div>
+                    </form>
+
+                    <!-- paket -->
+                    <div class="fitur-paket lg:text-2xl lg:font-light flex flex-col space-y-1">
+                        <div class="flex items-center">
+                            <p id="paketLabel" class="max-w-max capitalize">paket</p>
+                        </div>
+                        <div id="paket" class=""></div>
+                    </div>
+                    <!-- end -->
+
+                    <!-- produk -->
+                    <div class="fitur-produk lg:text-2xl lg:font-light flex flex-col space-y-1">
+                        <div class="flex justify-between items-center">
+                            <p id="produkLabel" class="max-w-max capitalize"></p>
+                            <button id="all_produk">
+                                <p id="produkLabelAll" style="color: #0ea5e9;" class="capitalize"></p>
+                            </button>
+                        </div>
+                        <div class="flex overflow-x-auto space-x-3" id="produkSlide"></div>
+                    </div>
+                    <!-- end -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+	
+
+	<script src="./config/index.js?v=10"></script>
+	<script src="./assets/md5.js"></script>
+	<script id="firstScript" src="./assets/init.js"></script>
+
+    <script>
+		const loginType = document.getElementById('loginType')
+		const btnLogin = document.getElementById('btnLogin')
+
+		let voucherActive = document.querySelector('#voucherActive');
+
+		let lusername = document.getElementById('lusername');
+		let username = document.getElementById('username');
+
+		let lpassword = document.getElementById('lpassword');
+		let password = document.getElementById('password');
+
+		let vA = 1;
+		if (configData.login.default == 0) { // 0 voucher
+			vA = 0
+		}
+
+		if (loginType && btnLogin) {
+
+			if (configData.login.option == '1') {
+				loginType.hidden = false
+			} else {
+				loginType.hidden = true
+			}
+
+			voucherActive.value = vA
+
+			if (voucherActive.value == 0) {
+				lusername.innerText = 'voucher'
+				username.setAttribute('placeholder', 'voucher')
+
+				loginType.innerHTML = `${configData.label.login_as} <span style="color: #0ea5e9;" class="">Member</span>`
+
+				lpassword.hidden = true
+				password.hidden = true
+			} else {
+				loginType.innerHTML = `${configData.label.login_as} <span style="color: #0ea5e9;" class="">Voucher</span>`
+
+				lusername.innerText = 'username'
+				username.setAttribute('placeholder', 'username')
+
+				password.value = '';
+			}
+
+			loginType.addEventListener('click', () => {
+
+				if (voucherActive.value == 1) {
+					lpassword.hidden = true
+					password.hidden = true
+
+					lusername.innerText = 'masukkan kode voucher disini.'
+					username.setAttribute('placeholder', 'voucher')
+					voucherActive.value = 0
+					loginType.innerHTML = `${configData.label.login_as} <span style="color: #0ea5e9;" class="">Member</span>`
+
+				} else {
+					lpassword.hidden = false
+					password.hidden = false
+					lusername.innerText = 'username'
+					username.setAttribute('placeholder', 'username')
+					voucherActive.value = 1
+					password.value = '';
+					loginType.innerHTML = `${configData.label.login_as} <span style="color: #0ea5e9;" class="">Voucher</span>`
+				}
+
+			})
+
+			// btnLogin.addEventListener('click', (e) => {
+			// 	$('#myform').submit(function () {
+			// 		if (voucherActive.value == 0) {
+			// 			let user = username.value
+			// 			username.value = user;
+			// 			password.value = user;
+
+			// 			if (password.value != "") {
+			// 				return true;
+			// 			} else {
+			// 				return false;
+			// 			}
+			// 		} else {
+			// 			return true;
+			// 		}
+
+			// 		// return true; // return false to cancel form action
+			// 	});
+			// })
+		}
+
+		let usernameValue;
+		let passwordValue;
+
+		username.onkeyup = setpass;
+		password.onkeyup = setpass;
+
+		function setpass() {
+			if (voucherActive.value == 0) {
+				if (configData.login.voucher.value == "toUpperCase") {
+					usernameValue = username.value.toUpperCase();
+					username.value = usernameValue;
+					password.value = usernameValue;
+				} else if (configData.login.voucher.value == "toLowerCase") {
+					usernameValue = username.value.toLowerCase();
+					username.value = usernameValue;
+					password.value = usernameValue;
+				} else {
+					usernameValue = username.value;
+					username.value = usernameValue;
+					password.value = usernameValue;
+				}
+			} else {
+				if (configData.login.member.value == "toUpperCase") {
+					usernameValue = username.value.toUpperCase();
+					passwordValue = password.value.toUpperCase();
+					username.value = usernameValue;
+					password.value = passwordValue;
+				} else if (configData.login.member.value == "toLowerCase") {
+					usernameValue = username.value.toLowerCase();
+					passwordValue = password.value.toLowerCase();
+					username.value = usernameValue;
+					password.value = passwordValue;
+				} else {
+					usernameValue = username.value;
+					passwordValue = password.value;
+					username.value = usernameValue;
+					password.value = passwordValue;
+				}
+			}
+
+		}
+		
+		function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+
+			if (voucherActive.value == 0) {
+				let user = document.sendin.username.value
+				username.value = user;
+				password.value = user;
+				document.sendin.password.value = hexMD5('$(chap-id)' + user + '$(chap-challenge)');
+			} else {
+				document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+			}
+
+			document.sendin.submit();
+			return false;
+		}
+	</script>
+
+</body>
+</html>
